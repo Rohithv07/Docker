@@ -39,3 +39,8 @@ My Workplay on docker
 
 
 - `docker unpause` :- unpause all processes within one or more containers
+
+- `docker-compose up` :- aggregates the output of each container
+
+
+- `docker-compose up --detach` :- starts the containers in the background and leaves them running
