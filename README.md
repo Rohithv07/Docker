@@ -2,7 +2,19 @@
 My Workplay on docker
 
 ## Commands to remember : 
-- `docker run` :- runs a command in a new container
+
+- `docker run` :- runs a command in a new container . `docker run = docker create + docker start`
+
+
+- `docker ps` :- to list all the running containers
+
+
+- `docker ps --all` :- list all the container ever created
+
+
+- `docker system prune` :- to delete all the containers ever created along with some other properties
+
+- `docker logs <container-id>` :- to get the logs
 
 
 - `docker start` :- start stopped container
@@ -39,6 +51,7 @@ My Workplay on docker
 
 
 - `docker unpause` :- unpause all processes within one or more containers
+
 
 - `docker-compose up` :- aggregates the output of each container
 
