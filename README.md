@@ -23,7 +23,7 @@ My Workplay on docker
 
 - `docker exec -it <container id> sh` :- provides access to the terminal inside the context of the container
 
-- `docker build` :- build an image from a Docker file
+- `docker build .` :- build an image from a Docker file
 
 - `docker pull` :- pulls an image from registry
 
