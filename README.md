@@ -5,6 +5,8 @@ My Workplay on docker
 
 - `docker run` :- runs a command in a new container . `docker run = docker create + docker start`
 
+- `docker run -p <localhostport>:<containerport> <imagename/id>` :- running on ports
+
 - `docker ps` :- to list all the running containers
 
 - `docker ps --all` :- list all the container ever created
@@ -24,6 +26,8 @@ My Workplay on docker
 - `docker exec -it <container id> sh` :- provides access to the terminal inside the context of the container
 
 - `docker build .` :- build an image from a Docker file
+
+- `docker commit ` :- manual image generation
 
 - `docker pull` :- pulls an image from registry
 
