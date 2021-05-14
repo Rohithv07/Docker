@@ -27,6 +27,14 @@ My Workplay on docker
 
 - `docker build .` :- build an image from a Docker file
 
+- `docker-compose up` :- aggregates the output of each container. Similar to docker run myimage
+
+- `docker-compose up --build` :- similar to docker build and docker run. Rebuilds the container after making any changes to the file 
+
+- `docker-compose up -d` :- starts the containers in the background and leaves them running
+
+- `docker-compose down` :- stops the running containers at the same time
+
 - `docker commit ` :- manual image generation
 
 - `docker pull` :- pulls an image from registry
@@ -46,7 +54,3 @@ My Workplay on docker
 - `docker pause` :- pauses all processes within one or more containers
 
 - `docker unpause` :- unpause all processes within one or more containers
-
-- `docker-compose up` :- aggregates the output of each container
-
-- `docker-compose up --detach` :- starts the containers in the background and leaves them running
