@@ -2,13 +2,14 @@
 
 FROM node:alpine
 
-WORKDIR /media/vazha/softwares/Github/Docker/NodeJsWebApp
+WORKDIR /usr/app
 
 # node:alpine version means very small version
 
 # Install deps
-COPY ./ ./
+COPY ./package.json ./
 RUN npm install
+COPY ./ ./
 
 # default command
 
