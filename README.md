@@ -35,6 +35,8 @@ My Workplay on docker
 
 - `docker-compose down` :- stops the running containers at the same time
 
+- `docker-compose ps` :- show the status of the containers
+
 - `docker commit ` :- manual image generation
 
 - `docker pull` :- pulls an image from registry
