@@ -39,6 +39,8 @@ My Workplay on docker
 
 - `docker commit ` :- manual image generation
 
+- `docker build -f <filename> .` :- to run a dockerfile with some different name
+
 - `docker pull` :- pulls an image from registry
 
 - `docker push` :- pushes an image to registry
