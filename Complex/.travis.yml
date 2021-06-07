@@ -1,0 +1,28 @@
+# required super user access
+sudo: required
+language: generic
+
+# services thhat are required
+services: 
+  - docker
+
+# series of steps ran before the test
+before_install:
+  - docker build -t rohithvazhathodiyil/multi-docker -f ./client/Dockerfile.dev ./client
+
+# triggering travis ci to run this script to have the test
+script:
+  - docker run -e CI=true rohithvazhathodiyil/multi-docker yarn test
+
+after_success:
+  - docker build -t rohithvazhathodiyil/multi-client ./client
+  - docker build -t rohithvazhathodiyil/mutil-nginx ./nginx
+  - docker build -t rohithvazhathodiyil/multi-server ./server
+  - docker build -t rohithvazhathodiyil/multi-worker ./worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push rohithvazhathodiyil/multi-client
+  - docker push rohithvazhathodiyil/mutil-nginx
+  - docker push rohithvazhathodiyil/multi-server
+  - docker push rohithvazhathodiyil/multi-worker

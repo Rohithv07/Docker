@@ -58,3 +58,57 @@ My Workplay on docker
 - `docker pause` :- pauses all processes within one or more containers
 
 - `docker unpause` :- unpause all processes within one or more containers
+
+
+# Kubernetes
+
+* What is Kubernetes - System for running many different containers over multiple different machines
+
+* Why Kubernetes - When you need to run many different containers with different images
+
+## Local Setup 
+
+* Install kubectl - cli to interact with master
+
+* Install a VM driver virtual box - make VM which will be our single node
+
+* Install minikube - runs a single node on that vm
+
+* `kubectl` :- use for managing containers in the node
+
+* `minikube` :- use for managing the VM itself (Local Only)
+
+* `minikube start` :- to start the minikube
+
+<!-- Table creation -->
+
+<table style="width:100%">
+	<tr>
+		<th>Docker Compose</th>
+		<th>Kubernetes </th>
+	</tr>
+	<tr>
+		<td> Each entry can optionally get docker compose to build an image </td>
+		<td> Kubernetes expects all images to already be built</td>
+	</tr>
+	<tr>
+		<td> Each entry represents a container we want to create</td>
+		<td> One config file per object we want to create</td>
+	</tr>
+	<tr>
+		<td> Each entry defines the n/w requirements (Ports) </td>
+		<td> We have to manually sets up all n/w</td>
+	</tr>
+</table>
+
+## Note
+
+Get a simple container running on our local K8s cluster running
+
+- Make sure our image is hosted on docker hub
+
+- Make one config file to create the container
+
+- Make one config file to setup n/w 
+
+
