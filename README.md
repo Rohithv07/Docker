@@ -117,13 +117,13 @@ Get a simple container running on our local K8s cluster running
 
 - Services :- Sets up networking in K8S cluster. There are 4 subtypes
 
-- - ClusterIp
+ - - ClusterIp
 
-- - NodePort : Exposes a container to the outside world and its only good for dev purposes
+ - - NodePort : Exposes a container to the outside world and its only good for dev purposes
 
-- - LoadBalancer
+ - - LoadBalancer
 
-- - Ingress
+ - - Ingress
 
 - `kubectl apply -f <fileNamePath>` :- feed a config file to kubectl
 
