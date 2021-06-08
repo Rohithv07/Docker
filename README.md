@@ -111,4 +111,24 @@ Get a simple container running on our local K8s cluster running
 
 - Make one config file to setup n/w 
 
+>> Config file used to create Objects for example StatefulSet, ReplicaController, Pod, Service. Object will serve different functionalities like running container, monitoring a container, setting up nw etc.
 
+- Pods :- Runs one or more closely related containers
+
+- Services :- Sets up networking in K8S cluster. There are 4 subtypes
+
+- - ClusterIp
+
+- - NodePort : Exposes a container to the outside world and its only good for dev purposes
+
+- - LoadBalancer
+
+- - Ingress
+
+- `kubectl apply -f <fileNamePath>` :- feed a config file to kubectl
+
+- `kubectl get pods` :- prints the status of all running pods
+
+- `kubectl get services` :- prints the status of all running services
+
+- `minikube ip` :- to get the ip of the VM
