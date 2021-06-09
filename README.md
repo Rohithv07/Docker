@@ -1,4 +1,4 @@
-# Docker
+# Docker and Kubernetes
 My Workplay on docker
 
 ## Commands to remember : 
@@ -132,3 +132,33 @@ Get a simple container running on our local K8s cluster running
 - `kubectl get services` :- prints the status of all running services
 
 - `minikube ip` :- to get the ip of the VM
+
+
+<!-- Table creation -->
+
+<table style="width:100%; align-content: center;">
+	<tr>
+		<th>Important Takeaways</th>
+	</tr>
+	<tr>
+		<td>Kubernetes is a system to deploy containerized apps</td>
+	</tr>
+	<tr>
+		<td>Nodes are individual machines or vm's that run containers</td>
+	</tr>
+	<tr>
+		<td>Masters are machines or vm's with a set of programs to manage nodes</td>
+	</tr>
+	<tr>
+		<td>Kubernetes didn't build our images - it got them from somewhere else</td>
+	</tr>
+	<tr>
+		<td>Kubernetes (the master) decided  where to run each container - each node can run a dissimilar set of containers</td>
+	</tr>
+	<tr>
+		<td>To deploy something, we update the desired state of the master with a config file</td>
+	</tr>
+	<tr>
+		<td>The master works constantly to meet you desired state</td>
+	</tr>
+</table>
