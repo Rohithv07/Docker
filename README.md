@@ -162,3 +162,50 @@ Get a simple container running on our local K8s cluster running
 		<td>The master works constantly to meet you desired state</td>
 	</tr>
 </table>
+
+- `kubectl describe <ObjectType> <ObjectName>` :- describes the logs about the specified object type and name
+
+<table style="width:100%; align-content: center;">
+	<tr>
+		<th>Limitations on Updating Config file</th>
+	</tr>
+	<tr>
+		<td>Can only change spec.containers[*].image</td>
+	</tr>
+	<tr>
+		<td>Can only change spec.initContainers[*].image</td>
+	</tr>
+	<tr>
+		<td>Can only change spec.activeDeadlineSeconds</td>
+	</tr>
+	<tr>
+		<td>Can only change spec.tolerations</td>
+	</tr>
+</table>
+
+- Solution to this is by using Deployment Object type
+
+### Difference between Pods and Deployment
+
+<table style="width:100%; align-content: center;">
+	<tr>
+		<th>Pods</th>
+		<th>Deployment</th>
+	</tr>
+	<tr>
+		<td>Run a single set of containers that are very close</td>
+		<td>Run a set of identical pods (one or more)</td>
+	</tr>
+	<tr>
+		<td>Good for one-off dev purposes</td>
+		<td>Monitors the state of each pod updating as necessary</td>
+	</tr>
+	<tr>
+		<td>Rarely used directly in production</td>
+		<td>Good for dev and production</td>
+
+	</tr>
+	<tr>
+		<td>Can only change spec.tolerations</td>
+	</tr>
+</table>
