@@ -203,9 +203,5 @@ Get a simple container running on our local K8s cluster running
 	<tr>
 		<td>Rarely used directly in production</td>
 		<td>Good for dev and production</td>
-
-	</tr>
-	<tr>
-		<td>Can only change spec.tolerations</td>
 	</tr>
 </table>
