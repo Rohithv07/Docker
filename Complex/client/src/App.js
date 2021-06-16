@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
+        <header className="App-header">Fib Calc Version 2
           <img src={logo} className="App-logo" alt="logo" />
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>

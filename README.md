@@ -205,3 +205,8 @@ Get a simple container running on our local K8s cluster running
 		<td>Good for dev and production</td>
 	</tr>
 </table>
+
+- `kubectl delete -f <configfile>` :- remove an object (like an imperative update)
+
+- `kubectl get deployments` :- prints the status of the deployment
+
