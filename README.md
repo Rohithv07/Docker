@@ -206,7 +206,46 @@ Get a simple container running on our local K8s cluster running
 	</tr>
 </table>
 
-- `kubectl delete -f <configfile>` :- remove an object (like an imperative update)
+-
+ `kubectl delete -f <configfile>` :- remove an object (like an imperative update)
 
 - `kubectl get deployments` :- prints the status of the deployment
 
+### Force pods to repull an image without changing the image tag issue#33664 kubernetes repo in github
+
+- Manually delete pods to get the deployment to recreate them with the latest version but deleting pods manually seems silly(bad idea)
+
+- Tag images with real version number and specify them in config file but it adds an extra step in the production deployment process(no friendly)
+
+- Use an imperative command to update the image version the deployment must use also not the best solution we can say
+
+- `kubectl set image <objectType> / <objectName> <containerName> = <newImageToUse>` :- Imperative command to update the image
+
+### Configure your VM to use the docker server
+
+* `eval $(minikube docker-env)` - this only configures your current terminal window ie this is not permanent and have to rerun the same command everytime if we close the terminal window
+
+```bash
+minikube docker-env 
+
+#produces the following output
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://ip:2376"
+export DOCKER_CERT_PATH="path"
+export MINIKUBE_ACTIVE_DOCKERD="minikube"
+
+# To point your shell to minikube's docker-daemon, run:
+# eval $(minikube -p minikube docker-env)
+
+
+```
+
+#### Why we want to do this :( 
+
+* Use all the same debugging techniques we learned with Docker CLI (Many of these are available through kubectl)
+
+>> For example kubectl logs <name> or kubectl exec -t <name> sh to enable a shell etc.
+
+* Manually kill containers to test Kubernetes self heal
+
+* Delete cached images in the node (`docker system prune -a`)
