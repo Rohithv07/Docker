@@ -240,7 +240,7 @@ export MINIKUBE_ACTIVE_DOCKERD="minikube"
 
 ```
 
-#### Why we want to do this :( 
+#### Why mess with docker in node :( 
 
 * Use all the same debugging techniques we learned with Docker CLI (Many of these are available through kubectl)
 
@@ -249,3 +249,60 @@ export MINIKUBE_ACTIVE_DOCKERD="minikube"
 * Manually kill containers to test Kubernetes self heal
 
 * Delete cached images in the node (`docker system prune -a`)
+
+
+### Path of introducing multicontainer project to K8s world
+
+* Create config file for each service and deployment
+
+* Test locally on minikube
+
+* Setup github/travis flow to build images and deploy
+
+* Deploy app to cloud provider
+
+### ClusterIP vs NodePort
+
+* ClusterIp exposes a set of pods to other objects inside the cluster and no outside world
+
+* NodePort exposes a set of pods to the outside world and good for dev purposes only.
+
+### Combine ClusterIP and Deployment yaml file
+
+Here we need to give `---` 3 consecutive dashes to separate them
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers:
+        - name: server
+          image: imageName
+          ports:
+            - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: server
+  ports:
+    - port: 5000
+      targetPort: 5000
+
+```
+
