@@ -306,3 +306,23 @@ spec:
 
 ```
 
+### Persistent Volume Claim (PVC in K8S world)
+
+- When we have a pod with Postgres container or any other db container and if it crashes, then the pod will be deleted will be deployment
+
+- When the new pod gets created with the postgres container, then there will be no data and all the previous data will be lost which is a big issue
+
+- So we use **volume** to store these data which will be persistent and if our pod crashes, the data will not be lost as the volumes will be on the host machine
+
+#### Volumes in K8S world (Don't get confused with docker volumes which is different with K8S volume)
+
+- VOlume is an object that allows a container to store data at the pod level
+
+- Volume resides inside a pod
+
+- If a postgres container inside the pod gets failed, the container can restart and get back the data that are stored from the volume
+
+- But if there occurs a case where the whole pod gets deleted, then the whole volume gets destroyed
+
+- Even after the pod restarts or the deployment restarts, the data will be lost
+
