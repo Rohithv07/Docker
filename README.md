@@ -326,3 +326,35 @@ spec:
 
 - Even after the pod restarts or the deployment restarts, the data will be lost
 
+### Volumes vs Persistent volume
+
+- Data is stored at the pod level and data is lost when the pod crashes
+
+- Data is stored outside the pod level and data is not lost when pod crashes or pod is deleted
+
+### Persistent volume vs Persistent Volume Claim (PVC)
+
+- Persistent Volume Claim is like advertisement options saying these much storage option is available
+
+- So based on these advertisement like things, we write the config file and specify we need these much amount of storage and feed it into kubectl
+
+- Now our salesperson which is the Kubernetes, looks into the statically provisioned persistent volume and see if it can meet the required storage which is requested.
+
+- If it met that, then the storage is provided, other wise, the required storage will be made available by dynamically provisioned persistent volume
+
+### Access Modes
+
+- ReadWriteOnce:- can be used by a single node
+
+- ReadOnlyMany:- multiple nodes can read from this
+
+- ReadWriteMany:- can be read and written to by many nodes
+
+
+- `kubectl get storageclass` :- tells about the storage class option available
+
+- `kubectl describe storageclass` :- describes about the storage class
+
+- `kubectl get pv` :- gets all the persistent volume
+
+- `kubectl get pvc` :- gets all the persistent volume claim
