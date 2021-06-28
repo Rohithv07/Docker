@@ -358,3 +358,11 @@ spec:
 - `kubectl get pv` :- gets all the persistent volume
 
 - `kubectl get pvc` :- gets all the persistent volume claim
+
+### Secrets
+
+* Securely stores a piece of information in the cluster such as a database password or any other sensitive information
+
+* `kubectl create secret generic <secret_name> --from-literal key=value`
+
+* `kubectl get secrets` - to get the list of created secrets
