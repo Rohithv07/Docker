@@ -366,3 +366,21 @@ spec:
 * `kubectl create secret generic <secret_name> --from-literal key=value`
 
 * `kubectl get secrets` - to get the list of created secrets
+
+### LoadBalancer
+
+* Legacy way of getting network traffic into a cluster
+
+### Ingress
+
+* Exposes a set of services to the outside world
+
+* So we sets up config as Ingress routing rules to get traffic to services and feed to kubectl
+
+* Then a controller for our ingress in created
+
+* After that a pod running nginx that handles routing in generated
+
+* `minikube addons enable ingress`
+
+* `minikube dashboard` :- to open up the minikube dashboard in the default browser
