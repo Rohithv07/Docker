@@ -386,3 +386,4 @@ spec:
 * `minikube dashboard` :- to open up the minikube dashboard in the default browser
 
 
+<!-- docker run -it -v $(pwd):/app ruby:2.4 sh -->
