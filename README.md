@@ -386,4 +386,14 @@ spec:
 * `minikube dashboard` :- to open up the minikube dashboard in the default browser
 
 
-<!-- docker run -it -v $(pwd):/app ruby:2.4 sh -->
+### Some other commands
+
+* `docker run -it -v $(pwd):/app ruby:2.4 sh` :- to start the ruby image  and start shell
+
+* `gem install travis` :- installs the travis
+
+* `travis login` :- to login to the travis account
+
+* `travis encrypt-file service-account.json -r githubusername/repo` :- to encrypt the file
+
+<!-- docker run -it -v $(pwd):/app ruby:2.4 sh        gem install travis -->
