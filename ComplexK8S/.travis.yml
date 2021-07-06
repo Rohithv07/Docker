@@ -1,6 +1,10 @@
 sudo: required
 services:
   - docker
+env:
+  global:
+    - SHA=$(git rev-parse HEAD)
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
   #- add command for encrypted key service account
   - curl https://sdk.cloud.google.com | bash > /dev/null;
@@ -10,3 +14,14 @@ before_install:
   - gcloud config set project projectName
   - gcloud config set compute/zone your_selected_zone
   - gcloud container clusters get-credentials multi-clusters
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t dockerid/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run dockerid/react-test yarn test -- --coverage
+
+deploy:
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master
